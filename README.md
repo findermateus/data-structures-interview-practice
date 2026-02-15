@@ -14,9 +14,9 @@ O projeto foi desenvolvido inteiramente em **TypeScript** e conta com um **menu 
 
 | Nome do Aluno | GitHub |
 | :--- | :--- |
-| [Mateus Finder] | [@findermateus](https://github.com/findermateus) |
-| [Rafael Pavesi dos Passos] | [@cursebearer](https://github.com/cursebearer) |
-| [Lucas Warmling] | [@eoCoRe](https://github.com/eoCoRe) |
+| Mateus Finder | [@findermateus](https://github.com/findermateus) |
+| Rafael Pavesi dos Passos | [@cursebearer](https://github.com/cursebearer) |
+| Lucas Warmling | [@eoCoRe](https://github.com/eoCoRe) |
 
 ---
 
