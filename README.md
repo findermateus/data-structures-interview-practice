@@ -17,6 +17,7 @@ O projeto foi desenvolvido inteiramente em **TypeScript** e conta com um **menu 
 | Mateus Finder | [@findermateus](https://github.com/findermateus) |
 | Rafael Pavesi dos Passos | [@cursebearer](https://github.com/cursebearer) |
 | Lucas Warmling | [@eoCoRe](https://github.com/eoCoRe) |
+| Felipe Gesser | [@felipeogesser](https://github.com/felipeogesser) |
 
 ---
 
