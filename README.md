@@ -1,57 +1,36 @@
-# IA para Desenvolvimento + Revisão de Estruturas de Dados
+This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
-**Unidade 1** - Atividade Prática de Code Interview
+## Getting Started
 
-## Sobre o Projeto
+First, run the development server:
 
-Este repositório contém a resolução de **12 desafios de programação** (Code Interview) focados em Estruturas de Dados I. O objetivo central desta atividade é duplo:
-1.  **Revisão Técnica:** Reforçar conhecimentos em Arrays, Listas Encadeadas e Pilhas.
-2.  **Uso de IA:** Utilizar ferramentas de Inteligência Artificial como parte obrigatória do fluxo de desenvolvimento (planejamento, geração de código, revisão e testes).
+```bash
+npm run dev
+# or
+yarn dev
+# or
+pnpm dev
+# or
+bun dev
+```
 
-O projeto foi desenvolvido inteiramente em **TypeScript** e conta com um **menu interativo (CLI)** para facilitar a execução e correção dos desafios.
+Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-## Equipe (PAC)
+You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
 
-| Nome do Aluno | GitHub |
-| :--- | :--- |
-| Mateus Finder | [@findermateus](https://github.com/findermateus) |
-| Rafael Pavesi dos Passos | [@cursebearer](https://github.com/cursebearer) |
-| Lucas Warmling | [@eoCoRe](https://github.com/eoCoRe) |
-| Felipe Gesser | [@felipeogesser](https://github.com/felipeogesser) |
+This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
 
----
+## Learn More
 
-## Como Executar
+To learn more about Next.js, take a look at the following resources:
 
-Este projeto possui um menu de seleção via terminal para rodar os desafios individualmente.
+- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
+- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
 
-### Pré-requisitos
-* Node.js instalado
-* Gerenciador de pacotes (NPM ou Yarn)
+You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
 
-### Passo a passo
+## Deploy on Vercel
 
-1.  **Instale as dependências:**
-    No diretório raiz do projeto, execute:
-    ```bash
-    npm install
-    ```
+The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
-2.  **Execute o Menu Interativo:**
-    Para abrir a CLI e escolher qual desafio testar, rode:
-    ```bash
-    npm run dev
-    ```
-
-3.  **Navegação:**
-    Use as setas do teclado para selecionar o desafio desejado e aperte `Enter`.
-
-## Lista de Desafios Resolvidos
-
-A equipe resolveu um total de 12 problemas, divididos por estrutura de dados, garantindo que pelo menos 50% sejam de nível Médio.
-
-## Regras de Desenvolvimento e Commits
-
-* **Commits:** Todos os membros da equipe realizaram commits no repositório.
-* **Não Repetição:** Nenhum problema foi repetido entre os membros.
-* **Volume:** Cada integrante foi responsável por codificar/explicar pelo menos 3 problemas.
+Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
