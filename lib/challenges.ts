@@ -1,4 +1,5 @@
 import { threeSum } from "@/lib/challenges/three-sum";
+import { ListNode, reverseBetween } from "./challenges/reverse-between";
 
 export type Difficulty = "Easy" | "Medium" | "Hard";
 export type Category = "Arrays" | "Listas Encadeadas" | "Pilhas";
@@ -49,47 +50,42 @@ const arrayChallenges: Challenge[] = [
 
 const linkedListChallenges: Challenge[] = [
   {
-    id: "reverse-linked-list",
-    number: 206,
-    title: "Reverse Linked List",
-    difficulty: "Easy",
+    id: "reverse-between",
+    number: 92,
+    title: "Reverse Between",
+    difficulty: "Medium",
     category: "Listas Encadeadas",
-    url: "https://leetcode.com/problems/reverse-linked-list/",
-    description: "Given the head of a singly linked list, reverse the list, and return the reversed list.",
-    run: mockRun({ head: [1, 2, 3, 4, 5] }, [5, 4, 3, 2, 1]),
-  },
-  {
-    id: "merge-two-lists",
-    number: 21,
-    title: "Merge Two Sorted Lists",
-    difficulty: "Easy",
-    category: "Listas Encadeadas",
-    url: "https://leetcode.com/problems/merge-two-sorted-lists/",
+    url: "https://leetcode.com/problems/reverse-linked-list-ii/",
     description:
-      "You are given the heads of two sorted linked lists list1 and list2. Merge the two lists in a one sorted list and return the head of the merged linked list.",
-    run: mockRun({ list1: [1, 2, 4], list2: [1, 3, 4] }, [1, 1, 2, 3, 4, 4]),
+      "Given the head of a singly linked list and two integers left and right where left <= right, reverse the nodes of the list from position left to position right, and return the reversed list.",
+    run: async () => {
+      const start = performance.now();
+      const toList = (arr: number[]): ListNode | null => {
+        const dummy = new ListNode(0);
+        let curr = dummy;
+        for (const val of arr) {
+          curr.next = new ListNode(val);
+          curr = curr.next;
+        }
+        return dummy.next;
+      };
+
+      const head = toList([1, 2, 3, 4, 5]);
+      const left = 2;
+      const right = 4;
+
+      const result = reverseBetween(head, left, right);
+
+      return {
+        payload: { head: [1, 2, 3, 4, 5], left, right },
+        result: result?.toArray() ?? [],
+        timeMs: +(performance.now() - start).toFixed(2),
+      };
+    },
   },
 ];
 
 const stackChallenges: Challenge[] = [
-  {
-    id: "min-stack",
-    number: 155,
-    title: "Min Stack",
-    difficulty: "Medium",
-    category: "Pilhas",
-    url: "https://leetcode.com/problems/min-stack/",
-    description: "Design a stack that supports push, pop, top, and retrieving the minimum element in constant time.",
-    run: mockRun({ operations: ["push(-2)", "push(0)", "push(-3)", "getMin()", "pop()", "top()", "getMin()"] }, [
-      null,
-      null,
-      null,
-      -3,
-      null,
-      0,
-      -2,
-    ]),
-  },
   {
     id: "evaluate-rpn",
     number: 150,
