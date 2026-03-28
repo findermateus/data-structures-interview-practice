@@ -16,6 +16,7 @@ import { ChevronRight, Clock, ExternalLink, Hash, LayoutList, Loader2, Play } fr
 import { cn } from "@/lib/utils";
 import { ResultBlock } from "@/components/result-block";
 import { runChallenge } from "@/lib/actions/run-challenge";
+import { ModeToggle } from "@/components/ui/mode-toggle";
 
 export default function Home() {
   const [selected, setSelected] = useState<Challenge | null>(null);
@@ -43,14 +44,17 @@ export default function Home() {
     <div className="min-h-screen bg-background text-foreground font-mono">
       <div className="flex h-[calc(100vh-57px)]">
         <aside className="w-120 border-r flex flex-col">
-          <div className="px-4 py-5 border-b">
-            <p className="text-xs font-semibold tracking-wide">Desafios</p>
-            <p className="text-[10px] text-muted-foreground mt-0.5">Selecione um para executar</p>
+          <div className="flex justify-between items-center mx-5">
+            <div className="px-4 py-5 border-b">
+              <p className="text-xs font-semibold tracking-wide">Desafios</p>
+              <p className="text-[10px] text-muted-foreground mt-0.5">Selecione um para executar</p>
+            </div>
+            <ModeToggle />
           </div>
           <Tabs defaultValue="Arrays" className="flex flex-col h-full w-full">
             <TabsList className="grid grid-cols-3 h-auto w-full">
               {categories.map((cat) => (
-                <TabsTrigger key={cat} value={cat} className="text-[10px] py-1.5">
+                <TabsTrigger key={cat} value={cat}>
                   {cat}
                 </TabsTrigger>
               ))}
@@ -119,8 +123,17 @@ export default function Home() {
                         {selected.category}
                       </Badge>
                     </div>
+
                     <h1 className="text-xl font-bold mb-1">{selected.title}</h1>
-                    <p className="text-sm text-muted-foreground leading-relaxed max-w-2xl">{selected.description}</p>
+                    <p className="text-sm text-muted-foreground leading-relaxed max-w-2xl mb-3">
+                      {selected.description}
+                    </p>
+                    <div className="max-w-2xl">
+                      <span className="text-xs font-semibold text-muted-foreground uppercase tracking-wide">
+                        Tradução
+                      </span>
+                      <p className="text-sm leading-relaxed mt-1">{selected.translation}</p>
+                    </div>
                   </div>
 
                   <div className="flex items-center gap-2 shrink-0">
