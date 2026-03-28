@@ -1,6 +1,9 @@
 import { threeSum } from "@/lib/challenges/three-sum";
 import { ListNode, reverseBetween } from "./challenges/reverse-between";
 import { simplifyPath } from "./challenges/simplify-path";
+import { baseballGame } from "@/lib/challenges/baseball-game";
+import { insertGreatestCommonDivisors } from "@/lib/challenges/insert-gcd-list";
+import { summaryRanges } from "@/lib/challenges/summary-ranges";
 
 export type Difficulty = "Easy" | "Medium" | "Hard";
 export type Category = "Arrays" | "Listas Encadeadas" | "Pilhas";
@@ -42,6 +45,24 @@ const arrayChallenges: Challenge[] = [
       return { payload: payload, result, timeMs: +(performance.now() - start).toFixed(2) };
     },
   },
+  {
+    id: "summary-ranges",
+    number: 228,
+    title: "Summary Ranges",
+    difficulty: "Easy",
+    category: "Arrays",
+    url: "https://leetcode.com/problems/summary-ranges/",
+    description:
+      "Given a sorted unique integer array, return the smallest sorted list of ranges that cover all the numbers in the array exactly.",
+    translation:
+      "Dado um array de inteiros únicos e ordenados, retorne a menor lista ordenada de intervalos que cubra todos os números do array exatamente.",
+    run: async () => {
+      const payload = { nums: [0, 1, 2, 4, 5, 7] };
+      const start = performance.now();
+      const result = summaryRanges(payload.nums);
+      return { payload, result, timeMs: +(performance.now() - start).toFixed(2) };
+    },
+  },
 ];
 
 const linkedListChallenges: Challenge[] = [
@@ -81,6 +102,39 @@ const linkedListChallenges: Challenge[] = [
       };
     },
   },
+  {
+    id: "insert-gcd-list",
+    number: 2807,
+    title: "Insert Greatest Common Divisors in Linked List",
+    difficulty: "Medium",
+    category: "Listas Encadeadas",
+    url: "https://leetcode.com/problems/insert-greatest-common-divisors-in-linked-list/",
+    description:
+      "Given the head of a linked list, insert a new node between every pair of adjacent nodes with a value equal to the greatest common divisor of them.",
+    translation:
+      "Dado o nó inicial de uma lista encadeada, insira um novo nó entre cada par de nós adjacentes com valor igual ao máximo divisor comum entre eles.",
+    run: async () => {
+      const toList = (arr: number[]): ListNode | null => {
+        const dummy = new ListNode(0);
+        let curr = dummy;
+        for (const val of arr) {
+          curr.next = new ListNode(val);
+          curr = curr.next;
+        }
+        return dummy.next;
+      };
+
+      const input = [18, 6, 10, 3];
+      const start = performance.now();
+      const result = insertGreatestCommonDivisors(toList(input));
+
+      return {
+        payload: { head: input },
+        result: result?.toArray() ?? [],
+        timeMs: +(performance.now() - start).toFixed(2),
+      };
+    },
+  },
 ];
 
 const stackChallenges: Challenge[] = [
@@ -108,6 +162,24 @@ const stackChallenges: Challenge[] = [
         result,
         timeMs: +(performance.now() - start).toFixed(2),
       };
+    },
+  },
+  {
+    id: "baseball-game",
+    number: 682,
+    title: "Baseball Game",
+    difficulty: "Easy",
+    category: "Pilhas",
+    url: "https://leetcode.com/problems/baseball-game/",
+    description:
+      "You are keeping the scores for a baseball game with strange rules. Given a list of operations, return the sum of all scores on the record after applying all operations.",
+    translation:
+      "Você está registrando pontuações de um jogo de baseball com regras especiais. Dado uma lista de operações, retorne a soma de todas as pontuações após aplicar todas as operações.",
+    run: async () => {
+      const payload = { operations: ["5", "2", "C", "D", "+"] };
+      const start = performance.now();
+      const result = baseballGame(payload.operations);
+      return { payload, result, timeMs: +(performance.now() - start).toFixed(2) };
     },
   },
 ];
