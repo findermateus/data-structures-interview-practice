@@ -4,6 +4,9 @@ import { simplifyPath } from "./challenges/simplify-path";
 import { baseballGame } from "@/lib/challenges/baseball-game";
 import { insertGreatestCommonDivisors } from "@/lib/challenges/insert-gcd-list";
 import { summaryRanges } from "@/lib/challenges/summary-ranges";
+import { missingNumber } from "@/lib/challenges/missing-number";
+import { productExceptSelf } from "./challenges/product-of-array-except-self";
+import { middleNode } from "./challenges/middle-of-the-linked-list";
 
 export type Difficulty = "Easy" | "Medium" | "Hard";
 export type Category = "Arrays" | "Listas Encadeadas" | "Pilhas";
@@ -60,6 +63,43 @@ const arrayChallenges: Challenge[] = [
       const payload = { nums: [0, 1, 2, 4, 5, 7] };
       const start = performance.now();
       const result = summaryRanges(payload.nums);
+      return { payload, result, timeMs: +(performance.now() - start).toFixed(2) };
+    },
+  },
+  {
+    id: "missing-number",
+    number: 268,
+    title: "Missing Number",
+    difficulty: "Easy",
+    category: "Arrays",
+    url: "https://leetcode.com/problems/missing-number/",
+    description:
+      "Given an array nums containing n distinct numbers in the range [0, n], return the only number in the range that is missing from the array.",
+    translation:
+      "Dado um array nums contendo n números distintos no intervalo [0, n], retorne o único número no intervalo que está faltando no array.",
+    run: async () => {
+      const payload = { nums: [3, 0, 1] };
+      const start = performance.now();
+      const result = missingNumber(payload.nums);
+      return { payload, result, timeMs: +(performance.now() - start).toFixed(2) };
+    },
+  },
+
+  {
+    id: "product-of-array-except-self",
+    number: 238,
+    title: "Product of Array Except Self",
+    difficulty: "Medium",
+    category: "Arrays",
+    url: "https://leetcode.com/problems/product-of-array-except-self/",
+    description:
+      "Given an integer array nums, return an array answer such that answer[i] is equal to the product of all the elements of nums except nums[i].",
+    translation:
+      "Dado um array de inteiros nums, retorne um array answer tal que answer[i] seja igual ao produto de todos os elementos de nums exceto nums[i].",
+    run: async () => {
+      const payload = { nums: [1, 2, 3, 4] };
+      const start = performance.now();
+      const result = productExceptSelf(payload.nums);
       return { payload, result, timeMs: +(performance.now() - start).toFixed(2) };
     },
   },
@@ -130,6 +170,41 @@ const linkedListChallenges: Challenge[] = [
 
       return {
         payload: { head: input },
+        result: result?.toArray() ?? [],
+        timeMs: +(performance.now() - start).toFixed(2),
+      };
+    },
+  },
+  {
+    id: "middle-of-the-linked-list",
+    number: 876,
+    title: "Middle of the Linked List",
+    difficulty: "Easy",
+    category: "Listas Encadeadas",
+    url: "https://leetcode.com/problems/middle-of-the-linked-list/",
+    description:
+      "Given the head of a singly linked list, return the middle node of the linked list. If there are two middle nodes, return the second middle node.",
+    translation:
+      "Dado o nó inicial (head) de uma lista encadeada simples, retorne o nó do meio da lista. Se houver dois nós do meio, retorne o segundo nó do meio.",
+    run: async () => {
+      const toList = (arr: number[]): ListNode | null => {
+        const dummy = new ListNode(0);
+        let curr = dummy;
+        for (const val of arr) {
+          curr.next = new ListNode(val);
+          curr = curr.next;
+        }
+        return dummy.next;
+      };
+
+      const payload = { head: [1, 2, 3, 4, 5] };
+      const head = toList(payload.head);
+
+      const start = performance.now();
+      const result = middleNode(head);
+
+      return {
+        payload,
         result: result?.toArray() ?? [],
         timeMs: +(performance.now() - start).toFixed(2),
       };
