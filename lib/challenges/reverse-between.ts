@@ -10,10 +10,12 @@ export class ListNode {
   toArray(): number[] {
     const result: number[] = [];
     let curr: ListNode | null = this;
+
     while (curr) {
       result.push(curr.val);
       curr = curr.next;
     }
+
     return result;
   }
 }
@@ -26,7 +28,7 @@ export function reverseBetween(head: ListNode | null, left: number, right: numbe
     prev = prev.next!;
   }
 
-  let curr: ListNode | null = prev.next;
+  const curr: ListNode | null = prev.next;
 
   for (let i = 0; i < right - left; i++) {
     const next = curr!.next!;
