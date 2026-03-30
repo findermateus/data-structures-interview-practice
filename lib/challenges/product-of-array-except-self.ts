@@ -1,7 +1,6 @@
 export function productExceptSelf(nums: number[]): number[] {
   const n = nums.length;
   const res = new Array(n).fill(1);
-  
 
   let left = 1;
   for (let i = 0; i < n; i++) {
@@ -14,6 +13,6 @@ export function productExceptSelf(nums: number[]): number[] {
     res[i] *= right;
     right *= nums[i];
   }
-  
-  return res;
+
+  return res.map((n) => n || 0);
 }
