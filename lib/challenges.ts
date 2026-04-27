@@ -1,5 +1,5 @@
 import { threeSum } from "@/lib/challenges/three-sum";
-import { ListNode, reverseBetween } from "./challenges/reverse-between";
+import { reverseBetween } from "./challenges/reverse-between";
 import { simplifyPath } from "./challenges/simplify-path";
 import { searchRotatedSortedArray } from "./challenges/search-rotated-sorted-array";
 import { mergeTwoLists } from "./challenges/merge-two-sorted-lists";
@@ -10,6 +10,7 @@ import { summaryRanges } from "@/lib/challenges/summary-ranges";
 import { missingNumber } from "@/lib/challenges/missing-number";
 import { productExceptSelf } from "./challenges/product-of-array-except-self";
 import { middleNode } from "./challenges/middle-of-the-linked-list";
+import { ListNode } from "@/lib/list-node";
 
 export type Difficulty = "Easy" | "Medium" | "Hard";
 export type Category = "Arrays" | "Listas Encadeadas" | "Pilhas";

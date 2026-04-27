@@ -1,4 +1,7 @@
-import { ListNode } from "./reverse-between";
+import { ListNode } from "@/lib/list-node";
+
+// lista1 = [1, 2, 4]
+// lista2 = [1, 3, 4]
 
 export function mergeTwoLists(
   	list1: ListNode | null,
